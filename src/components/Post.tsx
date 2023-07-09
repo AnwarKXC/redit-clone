@@ -54,14 +54,14 @@ const Post: FC<PostProps> = ({
             <span>Posted by u/{post.author.username}</span>{' '}
             {formatTimeToNow(new Date(post.createdAt))}
           </div>
-          <a href={`/r/${subredditName}/post/${post.id}`}>
-            <h1 className='text-lg font-semibold py-2 leading-6 text-gray-900'>
+          <a href={`/r/${subredditName}/post/${post.id}`}  >
+            <h1 className='text-lg font-semibold py-2 leading-6 text-gray-900 overflow-hidden '>
               {post.title}
             </h1>
           </a>
 
           <div
-            className='relative text-sm max-h-40 w-full overflow-clip'
+            className='relative text-sm max-h-40  overflow-clip'
             ref={pRef}>
             <EditorOutput content={post.content} />
             {pRef.current?.clientHeight === 160 ? (

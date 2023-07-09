@@ -43,7 +43,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
 
   return (
     <div>
-      <div className='h-full flex flex-col sm:flex-row items-center sm:items-start justify-between'>
+      <div className='h-full flex flex-col sm:flex-row items-center sm:items-start justify-between overflow-hidden'>
         <Suspense fallback={<PostVoteShell />}>
           {/* @ts-expect-error server component */}
           <PostVoteServer
@@ -66,7 +66,7 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
             Posted by u/{post?.author.username ?? cachedPost.authorUsername}{' '}
             {formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}
           </p>
-          <h1 className='text-xl font-semibold py-2 leading-6 text-gray-900'>
+          <h1 className='text-xl font-semibold py-2 leading-6 text-gray-900  overflow-hidden'>
             {post?.title ?? cachedPost.title}
           </h1>
 
